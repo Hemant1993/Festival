@@ -1,0 +1,713 @@
+$primary-color: #dddddd;
+
+%common-initial {
+    position: fixed;
+    border-radius: 50%;
+    height: 10vw;
+    width: 10vw;
+    background-color: #ffd300;
+    z-index:-10;
+}
+
+%common-initialSilent {
+    position: fixed;
+    border-radius: 50%;
+    height: 35vw;
+    width: 35vw;
+    background-color: #ffd300;
+    z-index:1;
+}
+
+%common-festival {
+    position: fixed;
+    display: flex;
+    font-family: 'Indie Flower', cursive;
+    background-color: transparent;
+    font-size: 17vw;
+    opacity: 1;
+    z-index: 10;
+}
+
+%common-subcontent {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.1vw;
+    font-weight: bold;
+    margin-top: 1.5vw;
+    display: inline-block;
+}
+
+%common-insta {
+    font-size: 2.5vw;
+    padding: 0.5vw;
+    padding-right:1.5vw;
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+%common-insta2 {
+    padding: 0.5vw;
+    padding-right:1.5vw;
+}
+
+*{
+    cursor: url('Right reverse transparent black outline.cur'), auto;
+}
+
+body {
+    background-image: url("Background.jpg");
+    font-size: 100%;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.slider {
+    position: fixed;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    z-index: 20;
+    font-size: 13.5vw;
+    margin-top: 8vw;
+    margin-left: 8vw;
+    @for $i from 1 through 9 { 
+        div:nth-child(#{$i}) {
+            animation: slide 300ms #{2600+($i * 60)}ms forwards;
+        }
+    }
+}
+
+.slider div {
+    opacity: 0;
+}
+
+.slider2 {
+    position: fixed;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    z-index: 20;
+    font-size: 13.5vw;
+    margin-top: 22vw;
+    margin-left: 15vw;
+    @for $i from 1 through 12 { 
+        div:nth-child(#{$i}) {
+            animation: slide 300ms #{3100+($i * 60)}ms forwards;
+        }
+    }
+}
+
+.slider2 div {
+    opacity: 0;
+}
+
+
+@keyframes slide {
+    from{
+        opacity: 0;
+      transform: translate(-3vw,6vw);
+    }
+  to{
+    opacity: 0.6;
+    transform: translate(1vw,1vw);
+  }
+}
+
+.slider-down {
+    @for $i from 8 through 0 { 
+        div:nth-child(#{$i}) {
+            animation: slidedown 300ms #{480 - ($i * 60)}ms forwards;
+        }
+    }
+}
+
+.slider-down div{
+    opacity: 0.6;
+    transform: translate(1vw,1vw);
+}
+
+.slider-down2 {
+    @for $i from 11 through 0 { 
+        div:nth-child(#{$i}) {
+            animation: slidedown 300ms #{720 - ($i * 60)}ms forwards;
+        }
+    }
+}
+
+.slider-down2 div{
+    opacity: 0.6;
+    transform: translate(1vw,1vw);
+}
+
+@keyframes slidedown {
+    from{
+        opacity: 0.6;
+        transform: translate(1vw,1vw);
+    }
+  to{
+    opacity: 0;
+    transform: translate(-3vw,6vw);
+  }
+}
+
+.transwrite {
+    @extend %common-festival;
+    fill: none;
+    stroke-width: 1;
+    stroke: #444444;
+    margin-top: 11vw;
+    tspan > tspan{
+        stroke-dasharray: 1500;
+        stroke-dashoffset: -1500;
+        @for $i from 1 to 5 {
+            &:nth-of-type(#{$i}) {
+                animation: draw 300ms #{3700+($i * 150)}ms forwards;
+            }
+        }
+    }
+}
+
+@keyframes draw {
+    100% {
+        stroke-dashoffset: 0;
+        fill: #444444;
+    }
+}
+
+.transwrite-down {
+    stroke: #444444;
+    fill: #444444;
+    tspan > tspan{
+        stroke-dasharray: 1500;
+        stroke-dashoffset: 0;
+        @for $i from 4 to 0 {
+            &:nth-of-type(#{$i}) {
+                animation: drawdown 300ms #{750 - ($i * 150) }ms forwards;
+            }
+        }
+    }
+}
+
+@keyframes drawdown {
+    100% {
+        stroke-dashoffset: -1500;
+        fill: none;
+    }
+}
+
+.circle1 {
+    @extend %common-initial;
+    left: 42vw;
+    top: 19vw;
+}
+
+.circle2 {
+    @extend %common-initial;
+    left: 42vw;
+    top: 15vw;
+}
+
+.circle3 {
+    @extend %common-initial;
+    left: 46.1vw;
+    top: 19vw;
+}
+
+.circle4 {
+    @extend %common-initial;
+    left: 42vw;
+    top: 23vw;
+}
+
+.circle5 {
+    @extend %common-initial;
+    left: 38.1vw;
+    top: 19vw;
+}
+
+.circle6 {
+    @extend %common-initial;
+    left: 44.5vw;
+    top: 15.8vw;
+}
+
+.circle7 {
+    @extend %common-initial;
+    left: 44.5vw;
+    top: 22.2vw;
+}
+
+.circle8 {
+    @extend %common-initial;
+    left: 39.6vw;
+    top: 22.1vw;
+}
+
+.circle9 {
+    @extend %common-initial;
+    left: 39.6vw;
+    top: 15.9vw;
+}
+
+.circleanimation {
+    animation: expand 3500ms infinite ;
+}
+
+@keyframes expand {
+    0% {
+        height: 35vw;
+        width: 35vw;
+    }
+    50% {
+        height: 37vw;
+        width: 37vw;
+    }
+    100%{
+        height: 35vw;
+        width: 35vw;
+    }
+}
+
+.bersi {
+    position: fixed;
+    z-index: -5;
+    height: 10vw;
+    width: 10vw;
+    margin-top: 18.5vw;
+    margin-left: 41.5vw;
+}
+
+.crystalclear{
+    position: fixed;
+    z-index: 50;
+    font-family: 'Playfair Display', serif;
+    margin: 1vw 2vw 2vw 2vw;
+    font-size: 1.15vw;
+    letter-spacing: 0.05vw;
+    opacity: 0;
+    display: flex;
+    animation: appear 100ms 7680ms forwards;
+}
+
+.crystalclear1{
+    position: fixed;
+    z-index: 35;
+    font-family: 'Playfair Display', serif;
+    margin: 1vw 2vw 2vw 2vw;
+    font-size: 1.15vw;
+    letter-spacing: 0.05vw;
+    opacity: 1;
+    display: flex;
+}
+
+.space {
+    margin-right: 60vw;
+}
+
+#insta {
+    @extend %common-insta;
+}
+
+#insta1 {
+    @extend %common-insta;
+}
+
+#insta2 {
+    @extend %common-insta;
+}
+
+.homebutton {
+    position: fixed;
+    z-index: 35;
+    font-family: 'Playfair Display', serif;
+    margin: 2vw 2vw 2vw 45vw;
+    font-size: 1.15vw;
+    letter-spacing: 0.05vw;
+    opacity: 0;
+    display: flex;
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+    animation: appear 100ms 1600ms forwards;
+}
+
+.homebutton div {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.homebutton span {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.homecross {
+    position: fixed;
+    z-index: 35;
+    font-family: 'Playfair Display', serif;
+    margin: 1vw 2vw 2vw 48vw;
+    font-size: 1.15vw;
+    letter-spacing: 0.05vw;
+    opacity: 0;
+    display: flex;
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+    animation: appear 100ms 1600ms forwards;
+}
+
+.homecross div {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.nextarrow {
+    position: fixed;
+    z-index: 35;
+    font-family: 'Playfair Display', serif;
+    top: 36vw;
+    left: 93vw;
+    font-size: 1.15vw;
+    letter-spacing: 0.05vw;
+    opacity: 0;
+    display: flex;
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+    animation: appear 100ms 1600ms forwards;
+}
+
+.nextarrow div {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.backarrow {
+    position: fixed;
+    z-index: 35;
+    font-family: 'Playfair Display', serif;
+    top: 40.5vw;
+    left: 93vw;
+    font-size: 1.15vw;
+    letter-spacing: 0.05vw;
+    opacity: 0;
+    display: flex;
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+    animation: appear 100ms 1600ms forwards;
+}
+
+.backarrow div {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+#insta3 {
+    @extend %common-insta2;
+}
+
+#insta4 {
+    @extend %common-insta2;
+}
+
+.lowerbar {
+    position: fixed;
+    z-index: 50;
+    display: flex;
+    bottom: 1vw;
+    opacity: 0;
+    animation: appear 100ms 7680ms forwards;
+}
+
+.lowerbar1 {
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    bottom: 1vw;
+    opacity: 1;
+}
+
+.lowercrystal {
+    display: flex;
+    font-size: 3vw;
+    left: 2vw; 
+}
+
+.news {
+    left: 7vw;
+    overflow: hidden;
+    height: 3.5vw;
+    white-space: nowrap;
+}
+
+.newspara {
+    position: fixed;
+    padding: 1vw 0.5vw 0.5vw 0.5vw;
+    animation: paraslide 30s linear infinite forwards;
+}
+
+.newspara2 {
+    position: fixed;
+    padding: 1vw 0.5vw 0.5vw 0.5vw;
+    transform: translateX(120vw);
+    animation: paraslide 30s linear 15s infinite forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes paraslide {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-90vw);
+    }
+}
+
+.contentmenu {
+    position: fixed;
+    margin: 5vw 13vw;
+    z-index: 60;
+}
+
+.subcontentmenu {
+    @extend %common-subcontent;
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.subcontentmenu div{
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.indexletter {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.indexletter div {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.indexletter {
+    position: relative;
+    display: inline-flex;
+}
+
+.indexletter div{
+    margin-right: 0.1vw;
+    opacity: 0;
+    transform: translate(1vw,1vw);
+}
+
+.indexanimation1 {
+    @for $i from 1 through 42 { 
+        div:nth-child(#{$i}) {
+            animation: indexslide 100ms #{$i * 20}ms forwards;
+        }
+    }
+}
+
+.indexbreakanimation {
+            animation: indexslide 100ms forwards;
+}
+
+@keyframes indexslide {
+    from{
+        opacity: 0;
+        transform: translate(-3vw,6vw);
+    }
+  to{
+    opacity: 1;
+    transform: translate(1vw,1vw);
+  }
+}
+
+.underlined {
+    position: fixed;
+    z-index: 55;
+    opacity: 0;
+}
+
+
+.above{
+    opacity: 0;
+    transform: rotate3d(1,1,1,-45deg);
+    position: fixed;
+    z-index: 52;
+    margin-left: 24vw;
+    margin-top: 6vw;
+}
+
+#index1:hover {
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+#index2:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index3:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index4:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index5:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index6:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index7:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index8:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index9:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index10:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index11:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index12:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+#index13:hover {
+    cursor: url('ImpressionSelect_link.cur'), auto !important;
+}
+
+.downslide {
+    @for $i from 42 through 0 { 
+        div:nth-child(#{$i}) {
+            animation: reverseback 100ms #{840 - ($i * 20)}ms forwards;
+        }
+    }   
+}
+
+.downslidebreak {
+    animation: reverseback 100ms forwards;
+}
+
+.downslide div {
+    opacity: 1;
+    transform: translate(1vw,1vw);
+}
+
+@keyframes reverseback {
+    from{
+        opacity: 1;
+        transform: translate(1vw,1vw);
+    }
+    to{
+        opacity: 0;
+        transform: translate(-3vw,6vw);
+    }
+}
+
+.Scircle1 {
+    @extend %common-initialSilent;
+    left: 30vw;
+    top: 7vw;
+}
+
+.Scircle2 {
+    @extend %common-initialSilent;
+    left: 30vw;
+    top: 3vw;
+}
+
+.Scircle3 {
+    @extend %common-initialSilent;
+    left: 34.1vw;
+    top: 7vw;
+}
+
+.Scircle4 {
+    @extend %common-initialSilent;
+    left: 30vw;
+    top: 11vw;
+}
+
+.Scircle5 {
+    @extend %common-initialSilent;
+    left: 26.1vw;
+    top: 7vw;
+}
+
+.Scircle6 {
+    @extend %common-initialSilent;
+    left: 32.5vw;
+    top: 3.8vw;
+}
+
+.Scircle7 {
+    @extend %common-initialSilent;
+    left: 32.5vw;
+    top: 10.2vw;
+}
+
+.Scircle8 {
+    @extend %common-initialSilent;
+    left: 27.6vw;
+    top: 10.1vw;
+}
+
+.Scircle9 {
+    @extend %common-initialSilent;
+    left: 27.6vw;
+    top: 3.9vw;
+}
+
+.abovecircle {
+    opacity: 0.8;
+    transform: rotate3d(1,1,1,-45deg);
+    position: fixed;
+    z-index: 10;
+    margin-left: 24vw;
+    margin-top: 6vw;   
+}
+
+#homeicon1 {
+    font-size: 3.5vw;
+    opacity:0.5;   
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+
+#homeicon2 {
+    font-size: 3.5vw;
+    opacity:0.5;   
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+
+#homeicon3 {
+    font-size: 3.5vw;
+    opacity:0.5;   
+    cursor: url('ImpressionSelect_link.cur'), default !important;
+}
+
+.fullcontent {
+    position: fixed;
+    z-index: 30;
+    padding: 5vw 50vw 0vw 1vw;
+}
+
+.fullcontent h1{
+    font-size: 4vw;
+    opacity: 0;
+}
+
+.fullcontent p {
+    font-size: 1.3vw;
+    opacity: 0;
+}
